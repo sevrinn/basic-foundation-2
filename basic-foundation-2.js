@@ -1,6 +1,6 @@
 /**
  * This is my BASIC FOUNDATION II assignment for the JavaScript section of the Web Fundamentals module of Coding Dojo's Accelerated Flex Bootcamp.
- * It's another 13 Basic Algorithms written from scratch. I've commented them to hell to demonstrate my understanding of what each one does. Def a fun challenge!
+ * It's another 14 Basic Algorithms written from scratch. I've commented them to hell to demonstrate my understanding of what each one does. Def a fun challenge!
  */
 
 /**
@@ -8,37 +8,104 @@
  * ----------------
  * Given an array, write a function that changes all positive numbers in the array to the string "big". Example: makeItBig([-1,3,5,-5]) returns that same array, changed to [-1, "big", "big", -5].  
  */
-
+function biggieSize(arr) {
+  for(var i = 0; i < arr.length;i++) {  //iterates through length of array
+    if (arr[i] > 0) {                     //if current array index is less than zero  
+      arr[i] = "big";                       //current array index is set to "big";
+    }
+  }
+  return arr;   //after it iterates through array, return updated array.
+}
+var testArray = [-1,3,5,-5];
+biggieSize();
 /**
- * 2. Print Low, Return High
+ * 2. Print Low, Return High CANNOT GET TO PRINT low ????
  * ----------------
  * Create a function that takes in an array of numbers. The function should PRINT the lowest value in the array, and RETURN the highest value in the array. 
  */
-
+function printLowReturnHigh(arr) {
+  let low = 0
+  let high = 0
+  for(let i = 0; i < arr.length; i++) {
+    if( arr[i] < low) {
+      low = arr[i]
+    }
+    if (arr[i]>high) {
+      high = arr[i]
+    }
+    
+  }
+  console.log(low)
+  return high
+}
+let testArray = [-1,3,5,-5]
+console.log(printLowReturnHigh(testArray));
 /**
  * 3. Print One, Return Another 
  * ----------------
- * Build a function that takes in an array of numbers. The function should PRINT the second-to-last value in the array, and REATURN the first odd value in teh array. 
+ * Build a function that takes in an array of numbers. The function should PRINT the second-to-last value in the array, and RETURN the first odd value in teh array. 
  */
-
+function printOneReturnAnother(arr){
+  console.log(arr[arr.length - 2]);
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] % 2 !== 0) {
+      return arr[i];
+    }
+    
+  }
+}
+let testArray2 = [4,-6,2,7,8,9];
+console.log(printOneReturnAnother(testArray2))
 /**
  * 4. Double Vision
  * ----------------
  * Given an array, create a function that returns a new array where each value in the original array has been doubled. Example: Calling double([1,2,3]) should return [2,4,6] without changing the original array. 
  */
+function doubleVision(arr) {
+  let newArr = [];
+  for(let i = 0; i < arr.length; i++) {
+    newArr.push(arr[i]*2);
+  }
+  return newArr;
+}
+
+let testArray2 = [4,-6,2,7,8,9];
+console.log(doubleVision(testArray2));
 
 /**
  * 5. Count Positives
  * ----------------
- * Given an array of numbers, create a function to replace the last value with the nuber of positive values found in the array. Example, countPositives([-1,1,1,1]) changes the original array to [-1,1,1,3] and returns it. 
+ * Given an array of numbers, create a function to replace the last value with the number of positive values found in the array. Example, countPositives([-1,1,1,1]) changes the original array to [-1,1,1,3] and returns it. 
  */
+function countPositives(arr) {
+  let pos = 0;
+  for(var i = 0; i < arr.length; i++) {
+    if(arr[i] > 0) {
+      pos++;
+    }
+  }
+  arr[arr.length-1] = pos;
+  return arr;
+}
 
+let testArray2 = [4,-6,2,7,8,9,45,-6, 2,-9];
+console.log(countPositives(testArray2));
 /**
  * 6. Evens and Odds
  * ----------------
  * Create a function that accepts an array. Every time that array has three odd values in a row, print "That's odd!", Every time the array has three evens in a row print "Even more so!". 
  */
+function evensAndOdds(arr) {
+  //loop thru array
+    //if value if current index is odd (modulus 2 === 0) {
 
+    } 
+    //if the current index is greater than 0 AND the value of the current index is equal to the value of of the last index
+      //if the value of the current index is greater than the value of the next index
+          //console.log("That's odd!");
+      //
+    else
+}
 /**
  * 7. Increment the Seconds
  * ----------------
